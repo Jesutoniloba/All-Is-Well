@@ -1,0 +1,171 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+p {
+  color: rgb(72, 72, 72);
+}
+
+button {
+  background: #4a90e2;
+  align-items: center;
+  text-align: center;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #357abd;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background: #4a90e2;
+}
+
+.logo {
+  height: 80px;
+}
+
+.menu-button {
+  font-size: 22px;
+  border: none;
+  background: transparent;
+  color: #f5c35c;
+  cursor: pointer;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 200px;
+  height: 100%;
+  background: #4a90e2;
+  transition: 0.3s;
+  padding-top: 60px;
+  z-index: 10;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 15px 20px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+  color: #f5c35c;
+}
+
+/* === PAGE CONTENT === */
+.container {
+  padding: 80px 20px;
+  background: #f7f9fc;
+  min-height: 100vh;
+}
+
+.about-section {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+}
+
+.about-section h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.about-section .intro {
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.vision-mission {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  background: #eaf3ff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+  color: #4a90e2;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #333;
+  line-height: 1.6;
+}
+
+.beliefs {
+  margin-top: 40px;
+}
+
+.beliefs h2 {
+  color: #4a90e2;
+  margin-bottom: 15px;
+}
+
+.beliefs ul {
+  list-style: disc;
+  padding-left: 20px;
+  color: #333;
+}
+
+.services {
+  margin-top: 40px;
+}
+
+.services h2 {
+  color: #4a90e2;
+  margin-bottom: 15px;
+}
+
+.services ul {
+  list-style: none;
+  padding: 0;
+  color: #333;
+}
+
+.services li {
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.services strong {
+  color: #2c3e50;
+}
