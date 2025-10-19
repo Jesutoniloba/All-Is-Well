@@ -52,14 +52,8 @@ body.dark .toggle .circle {
   transform: translateX(30px);
 }
   */
-.container {
-  /* image path is relative to this CSS file (styles/), so go up one level */
-  background-image: url("../images/3d-render-foggy-room-interior-with-spotlight-shining-down.jpg");
-  background-size: cover; /* makes image cover the container */
-  background-position: center; /* centers the image */
-  background-repeat: no-repeat; /* prevents repeating */
-  min-height: 100vh; /* ensures container fills the viewport */
-}
+
+/* Responsive tweaks */
 
 section img {
   width: 100%;
@@ -122,33 +116,129 @@ header {
 }
 
 /* HERO SECTION */
-#hero {
+.hero {
+  position: relative;
+  height: 80vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../images/3d-render-foggy-room-interior-with-spotlight-shining-down.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   color: white;
-  padding: 100px 20px;
+  padding: 0 20px;
+  overflow: hidden;
 }
-#hero p {
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  animation: fadeInUp 1s forwards;
+}
+
+.fade-in:nth-child(1) {
+  animation-delay: 0.3s;
+}
+.fade-in:nth-child(2) {
+  animation-delay: 0.6s;
+}
+.fade-in:nth-child(3) {
+  animation-delay: 0.9s;
+}
+.fade-in:nth-child(4) {
+  animation-delay: 1.2s;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero button {
+  padding: 12px 25px;
+  font-size: 1rem;
   color: white;
+  background-color: #4a90e2;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero button:hover {
+  background-color: #357abd;
+  transform: scale(1.05);
+}
+
+/* Text styles */
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.hero h2 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+/* Responsive tweaks */
+@media (min-width: 600px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+  .hero p {
+    font-size: 1.2rem;
+  }
+  .hero button {
+    font-size: 1.1rem;
+    padding: 15px 30px;
+  }
 }
 
 /* ABOUT */
 
 #about {
-  padding: 10px;
+  background: #f7f9fc;
+  padding: 60px 20px;
+  text-align: center;
 }
 
 #about h3 {
   color: rgb(111, 111, 111);
   font-size: 20px;
+  text-align: center;
 }
 #about h2 {
   font-size: 30px;
   margin: 0px 0px;
+  text-align: center;
 }
 .bar-text {
   border-left: 4px solid #4a90e2;
   padding-left: 16px;
-  color: rgb(111, 111, 111);
+  display: inline-block;
+  text-align: left;
+}
+#about .btn {
+  text-align: center;
 }
 
 /* UNITS */
@@ -257,9 +347,9 @@ header {
 /* LOCATION */
 
 #location {
+  background: #f7f9fc;
   padding: 60px 20px;
   text-align: center;
-  background: #f7f9fc;
 }
 
 #location h3 {
