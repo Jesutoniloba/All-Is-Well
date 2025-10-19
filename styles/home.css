@@ -53,9 +53,14 @@ body.dark .toggle .circle {
 }
   */
 .container {
-  background: url("images/3d-render-foggy-room-interior-with-spotlight-shining-down.jpg")
-    no-repeat center center/cover;
+  /* image path is relative to this CSS file (styles/), so go up one level */
+  background-image: url("../images/3d-render-foggy-room-interior-with-spotlight-shining-down.jpg");
+  background-size: cover; /* makes image cover the container */
+  background-position: center; /* centers the image */
+  background-repeat: no-repeat; /* prevents repeating */
+  min-height: 100vh; /* ensures container fills the viewport */
 }
+
 section img {
   width: 100%;
   height: auto;

@@ -24,8 +24,9 @@ header {
   padding: 0 20px;
 }
 .container {
-  background: url("images/Pics-for-Blog-Articles-RL-29-2048x1024.png") no-repeat
-    center center/cover;
+  /* path is relative to this CSS file */
+  background: url("../images/Pics-for-Blog-Articles-RL-29-2048x1024.png")
+    no-repeat center center/cover;
 }
 
 .logo {
