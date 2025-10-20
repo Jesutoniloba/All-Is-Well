@@ -49,6 +49,7 @@ header {
   left: -250px;
   width: 200px;
   height: 100%;
+  z-index: 1000;
   background: #4a90e2;
   transition: 0.3s;
   padding-top: 60px;
@@ -84,7 +85,9 @@ header {
   margin-bottom: 30px;
 }
 
-.members-container {
+#choir,
+#ushering,
+#minister {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 30px;
