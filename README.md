@@ -87,7 +87,7 @@ git clone https://github.com/yourusername/church-website.git
 Jesutoniloba Oladipo
 Aspiring Full-Stack Developer | Computer Science Student, FUNAAB
 
-GitHub: https://github.com/yourusername
+GitHub: https://github.com/Jesutoniloba
 
-Email: your.email@example.com
+Email: jesutonilobaoladipo@gmail.com
 ```

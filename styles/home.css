@@ -464,3 +464,34 @@ footer {
   font-size: 13px;
   color: #f0f0f0;
 }
+
+/* ===== SCROLL REVEAL FIXED ===== */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional directions */
+.scroll-reveal.left {
+  transform: translateX(-60px);
+}
+.scroll-reveal.right {
+  transform: translateX(60px);
+}
+.scroll-reveal.bottom {
+  transform: translateY(60px);
+}
+
+.scroll-reveal.left.active,
+.scroll-reveal.right.active,
+.scroll-reveal.bottom.active {
+  transform: translate(0, 0);
+  opacity: 1;
+}
