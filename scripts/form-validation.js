@@ -3,8 +3,8 @@ const form = document.getElementById("contact-form");
 const errorMsg = document.getElementById("errorMsg");
 const successMsg = document.getElementById("successMsg");
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault(); // prevent form submission
+form.addEventListener("submit", async function (e) {
+  e.preventDefault(); // stop default browser reload
 
   // Get trimmed values
   const name = form.name.value.trim();
@@ -33,12 +33,28 @@ form.addEventListener("submit", function (e) {
     return;
   }
 
-  // Success
-  successMsg.textContent = "Form submitted successfully!";
-  fadeOut(successMsg);
+  // Send to Formspree
+  try {
+    const data = new FormData(form);
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: { Accept: "application/json" },
+    });
 
-  // Reset form
-  form.reset();
+    if (response.ok) {
+      successMsg.textContent = "✅ Message sent successfully!";
+      form.reset();
+      fadeOut(successMsg);
+    } else {
+      errorMsg.textContent = "❌ Failed to send message. Please try again.";
+      fadeOut(errorMsg);
+    }
+  } catch (err) {
+    console.error("Form submission error:", err);
+    errorMsg.textContent = "⚠️ Network error. Please try again later.";
+    fadeOut(errorMsg);
+  }
 });
 
 // Fade out messages after 3 seconds
